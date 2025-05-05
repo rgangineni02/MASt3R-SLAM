@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [comment]: <> (# MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors)
 
 <p align="center">
@@ -161,3 +162,6 @@ If you found this code/work to be useful in your own research, please considerin
     year={2024},
 }      
 ```
+=======
+# MASt3R-SLAM
+>>>>>>> cc986203c3ac38f3f17c827014886893d4cc577b
