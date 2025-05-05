@@ -310,8 +310,16 @@ if __name__ == "__main__":
         i += 1
 
     if dataset.save_results:
+        for i in range(len(keyframes)):
+            keyframe = keyframes[i]
+            X = keyframe.X_canon
+            C = keyframe.C
+            # print(f"X is {X}")
+            # print(f"C is {C}")
+
         save_dir, seq_name = eval.prepare_savedir(args, dataset)
         eval.save_traj(save_dir, f"{seq_name}.txt", dataset.timestamps, keyframes)
+        eval.save_XC(save_dir, f"{seq_name}_xc.txt", dataset.timestamps, keyframes)
         eval.save_reconstruction(
             save_dir,
             f"{seq_name}.ply",
@@ -321,6 +329,7 @@ if __name__ == "__main__":
         eval.save_keyframes(
             save_dir / "keyframes" / seq_name, dataset.timestamps, keyframes
         )
+
     if save_frames:
         savedir = pathlib.Path(f"logs/frames/{datetime_now}")
         savedir.mkdir(exist_ok=True, parents=True)
